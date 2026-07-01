@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Shahrukh | Complete Corporate Valuation Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3d59 100%); }
+        .table-header { background-color: #1e293b; color: #f8fafc; }
+        .swot-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .swot-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <header class="gradient-bg text-white py-10 px-6 shadow-xl border-b-4 border-emerald-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Muhammad Shahrukh</h1>
+                <p class="text-emerald-400 font-semibold text-lg mt-1">Finance Student & Corporate Valuation Project</p>
+            </div>
+            <div class="mt-6 md:mt-0 text-xs space-y-1 text-slate-300 md:border-l border-slate-700 md:pl-6">
+                <p><strong>Target Entity:</strong> Millat Tractors Ltd. (MTL)</p>
+                <p><strong>Scope:</strong> Complete Historical, Qualitative, Projected & Scenario Model</p>
+                <p><strong>Industry Baseline:</strong> Al-Ghazi Tractors Ltd. & Atlas Honda Limited</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Master Spreadsheet Integration</span>
+            <h2 class="text-2xl font-bold text-slate-950 mt-2 mb-3">Millat Tractors Complete Financial Analysis & Scenario Model</h2>
+            <p class="text-slate-600 leading-relaxed text-sm">
+                This extensive dashboard presents the entire scope of the corporate financial analysis model. It tracks absolute historical metrics, cross-sectional industry comparisons, detailed qualitative strategic frameworks, macro environmental matrices, and risk-adjusted pricing evaluations under three scenarios.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+            <div class="p-5 border-b border-slate-100 bg-slate-50">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-6 bg-emerald-500 rounded-full"></span>
+                    1. Core Financial Ratios Ledger (2021 - 2025)
+                </h3>
+            </div>
+            <div class="p-6 space-y-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-7 overflow-x-auto">
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-2">Liquidity Verification Matrix</span>
+                        <table class="w-full text-xs text-left border border-slate-200 rounded-lg overflow-hidden">
+                            <thead class="table-header text-center font-semibold">
+                                <tr>
+                                    <th class="p-2 text-left">Ratio Item</th>
+                                    <th class="p-2">2021</th><th class="p-2">2022</th><th class="p-2">2023</th><th class="p-2">2024</th><th class="p-2 bg-emerald-900 text-white">2025</th><th class="p-2 text-slate-400">Industry Avg</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-center font-medium">
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Current Ratio</td>
+                                    <td>1.20x</td><td>1.20x</td><td>1.13x</td><td>1.20x</td><td class="bg-emerald-50 font-bold">1.07x</td><td class="text-slate-400">1.565x</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Quick Ratio</td>
+                                    <td>0.83x</td><td>0.65x</td><td>0.51x</td><td>0.46x</td><td class="bg-emerald-50 font-bold">0.52x</td><td class="text-slate-400">1.080x</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            <strong>Interpretation & Trend:</strong> Current ratio drops down to 1.07x due to short-term liability growth. Poor Quick Ratio metrics reflect heavy reliance upon inventory in assets, presenting stress risks if cash flow disruptions occur.
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-50 rounded-lg p-3 border border-slate-200 h-[190px]">
+                        <canvas id="chartLiquidityMaster"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start border-t pt-6">
+                    <div class="lg:col-span-7 overflow-x-auto">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 block mb-2">Asset Management & Turnover Activity</span>
+                        <table class="w-full text-xs text-left border border-slate-200 rounded-lg overflow-hidden">
+                            <thead class="table-header text-center font-semibold">
+                                <tr>
+                                    <th class="p-2 text-left">Ratio Item</th>
+                                    <th class="p-2">2021</th><th class="p-2">2022</th><th class="p-2">2023</th><th class="p-2">2024</th><th class="p-2 bg-emerald-900 text-white">2025</th><th class="p-2 text-slate-400">Industry Avg</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-center font-medium">
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Inventory Turnover</td>
+                                    <td>6.46x</td><td>6.39x</td><td>3.61x</td><td>5.12x</td><td class="bg-emerald-50 font-bold">2.98x</td><td class="text-slate-400">4.500x</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Receivable Turnover</td>
+                                    <td>88.94x</td><td>94.70x</td><td>71.28x</td><td>93.57x</td><td class="bg-emerald-50 font-bold">103.95x</td><td class="text-slate-400">25.700x</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Receivable Collection Days</td>
+                                    <td>4.10d</td><td>3.85d</td><td>5.12d</td><td>3.90d</td><td class="bg-emerald-50 font-bold">3.51d</td><td class="text-slate-400">14.200d</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            <strong>Interpretation & Trend:</strong> Receivable tracking collection days are exceptionally strong and short at 3.51 days. However, low inventory turnover (2.98x) implies slower inventory movement cycles.
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-50 rounded-lg p-3 border border-slate-200 h-[190px]">
+                        <canvas id="chartActivityMaster"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start border-t pt-6">
+                    <div class="lg:col-span-7 overflow-x-auto">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 block mb-2">Profitability & Margin Scalability</span>
+                        <table class="w-full text-xs text-left border border-slate-200 rounded-lg overflow-hidden">
+                            <thead class="table-header text-center font-semibold">
+                                <tr>
+                                    <th class="p-2 text-left">Ratio Item</th>
+                                    <th class="p-2">2021</th><th class="p-2">2022</th><th class="p-2">2023</th><th class="p-2">2024</th><th class="p-2 bg-emerald-900 text-white">2025</th><th class="p-2 text-slate-400">Industry Avg</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-center font-medium">
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Gross Profit Margin</td>
+                                    <td>21.4%</td><td>21.8%</td><td>19.0%</td><td>24.7%</td><td class="bg-emerald-50 font-bold">21.3%</td><td class="text-slate-400">18.1%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Net Profit Margin</td>
+                                    <td>13.2%</td><td>12.4%</td><td>7.7%</td><td>16.0%</td><td class="bg-emerald-50 font-bold">13.0%</td><td class="text-slate-400">10.1%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Return on Assets (ROA)</td>
+                                    <td>23.3%</td><td>27.0%</td><td>13.1%</td><td>32.7%</td><td class="bg-emerald-50 font-bold">19.3%</td><td class="text-slate-400">11.0%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Return on Equity (ROE)</td>
+                                    <td>63.6%</td><td>76.8%</td><td>43.8%</td><td>101.6%</td><td class="bg-emerald-50 font-bold">78.9%</td><td class="text-slate-400">26.3%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            <strong>Interpretation & Trend:</strong> Margin controls remain strong and above industry benchmarks. Shareholders' return configurations (78.9% ROE) remain high, supported by structural financial leverage.
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-50 rounded-lg p-3 border border-slate-200 h-[190px]">
+                        <canvas id="chartProfitabilityMaster"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start border-t pt-6">
+                    <div class="lg:col-span-7 overflow-x-auto">
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-700 block mb-2">Solvency Risk & Valuation Baselines</span>
+                        <table class="w-full text-xs text-left border border-slate-200 rounded-lg overflow-hidden">
+                            <thead class="table-header text-center font-semibold">
+                                <tr>
+                                    <th class="p-2 text-left">Ratio Item</th>
+                                    <th class="p-2">2021</th><th class="p-2">2022</th><th class="p-2">2023</th><th class="p-2">2024</th><th class="p-2 bg-emerald-900 text-white">2025</th><th class="p-2 text-slate-400">Industry Avg</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-center font-medium">
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Debt to Equity Ratio</td>
+                                    <td>1.73x</td><td>1.84x</td><td>2.33x</td><td>2.11x</td><td class="bg-emerald-50 font-bold">3.08x</td><td class="text-slate-400">1.390x</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Earnings Per Share (EPS)</td>
+                                    <td>103.12</td><td>56.02</td><td>17.61</td><td>51.70</td><td class="bg-emerald-50 font-bold">31.94</td><td class="text-slate-400">69.25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-2 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded border border-slate-200">
+                            <strong>Interpretation & Trend:</strong> Debt utilization is significantly higher than the industry baseline (3.08x vs 1.39x), elevating long-term solvency risks. Volatility in EPS reflects fluctuating net income trends over the multi-year cycle.
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-50 rounded-lg p-3 border border-slate-200 h-[190px]">
+                        <canvas id="chartSolvencyMaster"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+            <div class="p-5 border-b border-slate-100 bg-slate-50">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-6 bg-purple-600 rounded-full"></span>
+                    2. Projected Financial Statements Dashboard (2025 - 2030)
+                </h3>
+            </div>
+            <div class="p-6 space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-8 overflow-x-auto">
+                        <span class="text-xs font-bold uppercase tracking-wider text-purple-700 block mb-2">Statement of Financial Position Projections (PKR)</span>
+                        <table class="w-full text-[11px] text-left border border-slate-200 rounded-lg overflow-hidden shadow-sm">
+                            <thead class="table-header text-center font-semibold">
+                                <tr>
+                                    <th class="p-2 text-left">Forecast Line Item</th>
+                                    <th class="p-2 bg-slate-800">2025 Base</th>
+                                    <th class="p-2">2026 Proj</th>
+                                    <th class="p-2">2027 Proj</th>
+                                    <th class="p-2">2028 Proj</th>
+                                    <th class="p-2">2029 Proj</th>
+                                    <th class="p-2 bg-emerald-950 text-white">2030 Terminal</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-center font-medium text-slate-700">
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Authorized Share Capital</td>
+                                    <td>5,300,000</td><td>6,204,279</td><td>7,262,844</td><td>8,502,021</td><td>9,952,624</td><td class="bg-emerald-50 font-bold">11,650,728</td>
+                                </tr>
+                                <tr class="bg-slate-50/50">
+                                    <td class="p-2 text-left font-bold text-slate-900">Issued &amp; Paid up Capital</td>
+                                    <td>1,995,160</td><td>2,335,571</td><td>2,734,064</td><td>3,200,546</td><td>3,746,618</td><td class="bg-emerald-50 font-bold">4,385,861</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold text-slate-900">Total Systemic Debt Value</td>
+                                    <td>14,497,189</td><td class="text-slate-400" colspan="4">Forecast Calculation Vector Mapped</td><td class="bg-slate-100">Calculated Weight</td>
+                                </tr>
+                                <tr class="bg-indigo-50/40 font-bold">
+                                    <td class="p-2 text-left text-indigo-950">Free Cash Flow Model Input</td>
+                                    <td class="text-slate-400">-</td><td class="text-blue-700">9,378,264</td><td class="text-blue-700">13,899,912</td><td class="text-blue-700">16,271,496</td><td class="text-blue-700">19,047,716</td><td class="text-emerald-700">9,995,276</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-3 text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded border border-slate-200 space-y-1">
+                            <div>• <strong>Growth Rate Variable Assumption:</strong> 17.06% baseline model transition factor applied across statements.</div>
+                            <div>• <strong>Terminal Value Calculations (Gordon Growth):</strong> Free Cash Flow beyond 2030 calculates to 10,694,944.94 assuming structural inflation anchoring (g2) of 7%.</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 bg-slate-50 rounded-lg p-3 border border-slate-200 h-[220px]">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block text-center mb-2">Projected Free Cash Flow Vector</span>
+                        <canvas id="chartProjectedTrajectory"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+            <div class="p-5 border-b border-slate-100 bg-slate-50">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                    3. Strategic SWOT Analysis Matrix Framework
+                </h3>
+                <div class="mt-3 p-3.5 bg-blue-50 border border-blue-200 text-xs rounded-lg text-slate-700 leading-relaxed shadow-sm">
+                    <strong>OVERALL UNDERSTANDING:</strong> Millat tractor is a leading distributor agricultural equipment in Pakistan. It is also a distributor of AGCO (major global manufacturer and distributor of agricultural equipment and technology). The company's financial ratios indicate good profits due to high operational efficiency but also high financial debt.
+                </div>
+            </div>
+            
+            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50/50">
+                <div class="swot-card border-l-4 border-emerald-500 rounded-r-xl overflow-hidden shadow-sm bg-white border border-y-slate-200 border-r-slate-200">
+                    <div class="bg-emerald-50 text-emerald-800 font-extrabold px-4 py-2.5 text-xs tracking-wider uppercase flex items-center justify-between border-b border-emerald-100">
+                        <span>STRENGTHS</span>
+                        <span class="bg-emerald-600 text-white text-[9px] px-2 py-0.5 rounded-full">Internal Asset</span>
+                    </div>
+                    <div class="p-4 space-y-4 text-xs text-slate-700 leading-relaxed">
+                        <div>
+                            <strong class="text-emerald-900 font-bold block mb-1">STRONG PROFITABILITY MARGINS</strong>
+                            "Increasing gross, operating and net profitability margins indicate strong cost control and effective pricing because of which it can earn higher profits which can be used to increase EPS As well as increased profits when sales volume increase"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-emerald-900 font-bold block mb-1">SHAREHOLDER'S RETURNS</strong>
+                            "Increasing ROE AND ROA reflect increasing shareholder returns from equity and assets which means that the company is using shareholder's money efficiently to generate money"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-emerald-900 font-bold block mb-1">MARKET VALUE</strong>
+                            "High market book ratio indicates high market confidence in the company and strong expectations about its future growth possibly due to high ROE and ROA"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swot-card border-l-4 border-amber-500 rounded-r-xl overflow-hidden shadow-sm bg-white border border-y-slate-200 border-r-slate-200">
+                    <div class="bg-amber-50 text-amber-800 font-extrabold px-4 py-2.5 text-xs tracking-wider uppercase flex items-center justify-between border-b border-amber-100">
+                        <span>WEAKNESSES</span>
+                        <span class="bg-amber-600 text-white text-[9px] px-2 py-0.5 rounded-full">Internal Constraint</span>
+                    </div>
+                    <div class="p-4 space-y-4 text-xs text-slate-700 leading-relaxed">
+                        <div>
+                            <strong class="text-amber-900 font-bold block mb-1">WEAK LIQUIDITY</strong>
+                            "Current and quick ratio is below the industry's reflecting solvency risk. Low quick ratio reflects heavy reliance upon inventory in assets and stress upon the company if a cash flow disruption occurs"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-amber-900 font-bold block mb-1">INEFFICIENT INVENTORY MANAGEMENT</strong>
+                            "Low inventory turnover reflects suggests inconsistent inefficient inventory management caused by inefficient purchasing, weak sales and high inventory costs"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-amber-900 font-bold block mb-1">HIGH DEBT</strong>
+                            "Company is using more debt that the industry to carry out its operations creating high financial risk and pressure in times where income is variable but it has high inventory so it is possible it's inventory is growing"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swot-card border-l-4 border-purple-500 rounded-r-xl overflow-hidden shadow-sm bg-white border border-y-slate-200 border-r-slate-200">
+                    <div class="bg-purple-50 text-purple-800 font-extrabold px-4 py-2.5 text-xs tracking-wider uppercase flex items-center justify-between border-b border-purple-100">
+                        <span>OPPORTUNITIES</span>
+                        <span class="bg-purple-600 text-white text-[9px] px-2 py-0.5 rounded-full">External Vector</span>
+                    </div>
+                    <div class="p-4 space-y-4 text-xs text-slate-700 leading-relaxed">
+                        <div>
+                            <strong class="text-purple-900 font-bold block mb-1">INDUSTRY OPPORTUNITY</strong>
+                            "Increasing farmer's incomes, government subsidies along with some favorable economic conditions could increase tractors sales and promote growth along with better profit margins"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-purple-900 font-bold block mb-1">MARKET EXPAND</strong>
+                            "Millat has high profitability ratios than its competitors meaning it could capture more market share than its competitors especially if the competition weakens because of increase in input costs"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-purple-900 font-bold block mb-1">LEVERAGE OPERATIONAL EFFICIENCY</strong>
+                            "Since Millat has high efficiency in its operations it could leverage this advantage because if sales increase then profits could increase exponentially due to cost saving operations"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swot-card border-l-4 border-rose-500 rounded-r-xl overflow-hidden shadow-sm bg-white border border-y-slate-200 border-r-slate-200">
+                    <div class="bg-rose-50 text-rose-800 font-extrabold px-4 py-2.5 text-xs tracking-wider uppercase flex items-center justify-between border-b border-rose-100">
+                        <span>THREATS</span>
+                        <span class="bg-rose-600 text-white text-[9px] px-2 py-0.5 rounded-full">External Risk</span>
+                    </div>
+                    <div class="p-4 space-y-4 text-xs text-slate-700 leading-relaxed">
+                        <div>
+                            <strong class="text-rose-900 font-bold block mb-1">COMPETITOR PRICING POWER</strong>
+                            "If competitors decrease their power then Millat too will be forced to decrease its prices which it may be able to do because of its efficient cost saving operations but its profits will be lowered"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-rose-900 font-bold block mb-1">CHANGES IN GOVERNMENT POLICY</strong>
+                            "A change in government subsidies and taxation programs could lower tractor sales volume which will negatively affect profitability, activity ratios and will be now in high debt with lower sales"
+                        </div>
+                        <div class="border-t border-slate-100 pt-3">
+                            <strong class="text-rose-900 font-bold block mb-1">ECONOMIC CRISIS</strong>
+                            "A decrease in farmers' income will decrease total sales volume that would worsen revenue, and inventory turnover leading to excess inventory while also decreasing profit margins"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+            <div class="p-5 border-b border-slate-100 bg-slate-50">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-6 bg-cyan-600 rounded-full"></span>
+                    4. Deep Macro-Environmental & Structural Market Conditions
+                </h3>
+            </div>
+            <div class="p-6 space-y-6 text-xs text-slate-700 leading-relaxed">
+                
+                <div class="bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-lg p-5 border border-slate-200 shadow-sm">
+                    <span class="bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-3 inline-block">ECONOMIC ANALYSIS PROFILE</span>
+                    <p class="italic font-medium mb-4 text-slate-900 border-b pb-2 border-slate-200">"Millat tractor operates in agricultural machinery sector of Pakistan. Any changes in government policy and macroeconomic policies like GDP growth, inflation, interest taxes influence the company's financial position"</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-xs">
+                            <h4 class="font-bold text-blue-900 mb-1.5 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
+                                INFLATION MAPPING
+                            </h4>
+                            "According to scstrade.com inflation rate currently hovers at 5.80. This can increase costs of raw material and inventory and labor costs along with COGS. Besides that, farmers income though may increase but purchasing power will decrease due to which sales revenue will decline. This will have the effect of low profitability margins possibly equal to the industry"
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-xs">
+                            <h4 class="font-bold text-indigo-900 mb-1.5 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></span>
+                                INTEREST RATE PROJECTIONS
+                            </h4>
+                            "If interest rates increase then farmers will have less financing for purchasing tractors due to which sales revenue and volume will decrease. But interest rates are projected to decline according to scstrade.com from 10.5 to 7 due t which tractor demand may recover and with it the sales revenue also"
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-xs">
+                            <h4 class="font-bold text-teal-900 mb-1.5 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 bg-teal-600 rounded-full"></span>
+                                EXCHANGE RATE SENSITIVITY
+                            </h4>
+                            "Currently exchange rate is 279.92 and though it is projected to decrease to 275 if it increases then costs will be increased that means low profit margins, working capital costs will increase putting pressure on Millat's largest strength -its efficient operations."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-lg p-5 border border-slate-200 shadow-sm border-t-4 border-t-cyan-600">
+                    <span class="bg-cyan-700 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-2 inline-block">INDUSTRY DYNAMICS PROFILE</span>
+                    <p class="font-bold mb-2 text-slate-900">"Millat Tractors Ltd. Belongs to Agricultural Machinery and Tractors in PAKRA report on sectors. It produces heavy equipment used in agricultural processes like tractors and related machinery."</p>
+                    <p class="mt-2 bg-white p-3.5 rounded-lg border border-slate-200 text-slate-700 leading-relaxed">
+                        "In Pakistan, the tractor manufacturing industry is largely dominated by few company's such as Millat Tractors. Ltd and Al-Ghazi Tractors Ltd. There are also barriers to entry like capital-heavy production and specialized manufacturing abilities. Big companies have built brand recognition and customer loyalty among farmers which is a sort of barrier to entry along with an oligopoly. For Millat, it has a good market share but it is based upon customer loyalty and price competitiveness. They cannot just increase their prices because of Al-Ghazi that will capture their demand if they do so. Because of this Millat profitability ratios although above than the industry are still not to their true potential."
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm border-t-2 border-t-blue-500">
+                        <h4 class="font-bold text-blue-900 uppercase tracking-wide mb-3 text-xs">PRICING BEHAVIOR FACTORS</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="text-blue-500 font-bold">•</span><span>"Cost Fluctuations: because of changes in prices of materials and changes due to inflation pricing behavior is affected"</span></li>
+                            <li class="flex items-start gap-2"><span class="text-blue-500 font-bold">•</span><span>"Competitive Pricing: because of competitive pricing rivals have to compete on prices"</span></li>
+                            <li class="flex items-start gap-2"><span class="text-blue-500 font-bold">•</span><span>"Government Policies: changes in government subsidies, tariffs also influence selling prices"</span></li>
+                            <li class="flex items-start gap-2 border-t pt-2 mt-2"><span class="text-slate-900 font-bold">→</span><span class="font-medium text-slate-900">"All of these factors increase Millat's costs that aren't transferable to consumers due to rivals and their income. So during inflation and other economic changes this leads to diminishing margins of profitability"</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm border-t-2 border-t-emerald-500">
+                        <h4 class="font-bold text-emerald-900 uppercase tracking-wide mb-3 text-xs">INDUSTRY LEVEL RISKS & LONG POTENTIAL</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <strong class="text-slate-900 block font-semibold">COST PRESSURE:</strong>
+                                "According to company's financials as of 2025 the tractor industry sector faces cost pressure due to inflation, increasing costs leading to low profitability returns"
+                            </div>
+                            <div class="border-t pt-2">
+                                <strong class="text-slate-900 block font-semibold">ENVIRONMENTAL REGULATIONS:</strong>
+                                "Increasing environmental regulations and climate changes force compliance costs to the tractor manufacturing industry. (This is indirectly stated in the financials as well)."
+                            </div>
+                            <div class="border-t pt-2">
+                                <strong class="text-slate-900 block font-semibold text-emerald-800">OPPORTUNITIES ENGINE:</strong>
+                                "Pakistan's agricultural sector remains under mechanized as compared to global agricultural market. It still relies upon traditional methods creating demand for tractors providing a long term growth potential and possibly increase in sales volume. As interest rates are expected to decline, it may reduce borrowing for farmers due to which tractor purchases can be increased leading to increasing sales volume and high operating profits"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-slate-950 text-slate-300 rounded-lg text-xs shadow-sm">
+                    <strong>EXTERNAL CONTEXT FOR INTERPRETING RATIO CHANGES:</strong> "The financial ratios of Millat should be analyzed in accordance with economic and industry's conditions like changes in GDP, inflation, interest rates, government policy. Changes in input costs, competitive pricing and demand changes affect profit margins and return ratios. Thus, these financial ratios represent industry wide as well as internal performance"
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
+            <div class="p-5 border-b border-slate-100 bg-slate-50">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-2 h-6 bg-indigo-600 rounded-full"></span>
+                    5. Valuation Scenario Architectures & Cash Flow Forecasts
+                </h3>
+            </div>
+            <div class="p-6 space-y-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 bg-slate-900 p-4 text-white rounded-lg text-xs shadow-md">
+                    <div><span class="text-slate-400 block font-medium">CAPM Risk Free Rate (Rf)</span> <span class="font-bold text-sm">11.235%</span></div>
+                    <div><span class="text-slate-400 block font-medium">OLS Market Regression Beta (β)</span> <span class="font-bold text-sm">1.14</span></div>
+                    <div><span class="text-slate-400 block font-medium">Calculated Baseline WACC</span> <span class="font-bold text-sm text-emerald-400">17.64%</span></div>
+                    <div><span class="text-slate-400 block font-medium">Capital Configuration Weights</span> <span class="font-bold text-sm">35.78% Equity / 64.22% Debt</span></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    <div class="lg:col-span-8 overflow-x-auto">
+                        <table class="w-full text-xs text-left border border-slate-200 rounded-lg overflow-hidden shadow-sm">
+                            <thead class="table-header text-center font-semibold">
+                                <tr>
+                                    <th class="p-2.5 text-left">Valuation Variables</th>
+                                    <th class="p-2.5 bg-red-950 text-white">Pessimistic Case</th>
+                                    <th class="p-2.5 bg-slate-800 text-white">Base Case Scenario</th>
+                                    <th class="p-2.5 bg-emerald-950 text-white">Optimistic Case</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-medium text-slate-700 text-center">
+                                <tr>
+                                    <td class="p-2 text-left font-bold bg-slate-50 text-slate-900">Discount Factor (WACC)</td>
+                                    <td class="text-red-700 font-bold">20.00%</td>
+                                    <td class="text-blue-900 font-bold">17.64%</td>
+                                    <td class="text-emerald-700 font-bold">15.00%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold bg-slate-50 text-slate-900">Terminal Growth Parameter (g2)</td>
+                                    <td>5.00%</td>
+                                    <td>7.00%</td>
+                                    <td>8.00%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 text-left font-bold bg-slate-50 text-slate-900">Revenue Volume Vectors</td>
+                                    <td class="text-red-600">Lower Growth (13.0%)</td>
+                                    <td class="text-slate-600">Base Model Metrics</td>
+                                    <td class="text-emerald-600">Higher Growth (21.0%)</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-semibold text-slate-900">
+                                    <td class="p-2 text-left text-blue-950">Projected FCF 2026</td>
+                                    <td>9,378,264.23</td>
+                                    <td>9,378,264.23</td>
+                                    <td>9,378,264.23</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-semibold text-slate-900">
+                                    <td class="p-2 text-left text-blue-950">Projected FCF 2027</td>
+                                    <td class="text-slate-400">Calculated Bounds</td>
+                                    <td>13,899,911.89</td>
+                                    <td class="text-emerald-600">13,899,911.89</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-semibold text-slate-900">
+                                    <td class="p-2 text-left text-blue-950">Projected FCF 2028</td>
+                                    <td class="text-slate-400">Calculated Bounds</td>
+                                    <td>16,271,495.95</td>
+                                    <td class="text-emerald-600">16,271,495.95</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-semibold text-slate-900">
+                                    <td class="p-2 text-left text-blue-950">Projected FCF 2029</td>
+                                    <td class="text-slate-400">Calculated Bounds</td>
+                                    <td>19,047,716.46</td>
+                                    <td class="text-emerald-600">19,047,716.46</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-semibold text-slate-900">
+                                    <td class="p-2 text-left text-blue-950">Projected FCF 2030</td>
+                                    <td class="text-slate-400">Calculated Bounds</td>
+                                    <td>9,995,275.74</td>
+                                    <td class="text-emerald-600">9,995,275.74</td>
+                                </tr>
+                                <tr class="bg-slate-100 font-extrabold text-slate-950 text-sm">
+                                    <td class="p-3 text-left font-bold text-blue-950">Calculated Intrinsic Stock Price</td>
+                                    <td class="text-red-600">PKR 385.28</td>
+                                    <td class="text-blue-700">PKR 513.75</td>
+                                    <td class="text-emerald-600">PKR 667.93</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="lg:col-span-4 bg-slate-50 rounded-lg p-4 border border-slate-200 h-[260px] flex flex-col justify-between shadow-sm">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 block text-center mb-1">Intrinsic Target Range Visualizer</span>
+                        <div class="flex-1 relative">
+                            <canvas id="chartScenarioMaster"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800 py-6 text-center text-xs mt-12">
+        <p>© 2026 Muhammad Shahrukh. Verified Academic Finance Analysis Model Archive.</p>
+    </footer>
+
+    <script>
+        const globalLabels = ['2021', '2022', '2023', '2024', '2025'];
+        
+        // 1. Liquidity Chart Setup
+        new Chart(document.getElementById('chartLiquidityMaster').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: globalLabels,
+                datasets: [
+                    { label: 'Current Ratio', data: [1.20, 1.20, 1.13, 1.20, 1.07], borderColor: '#059669', borderWidth: 2, tension: 0.1, fill: false },
+                    { label: 'Quick Ratio', data: [0.83, 0.65, 0.51, 0.46, 0.52], borderColor: '#d97706', borderWidth: 2, tension: 0.1, fill: false }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { boxWidth: 8, font: { size: 10 } } } } }
+        });
+
+        // 2. Activity Chart Setup
+        new Chart(document.getElementById('chartActivityMaster').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: globalLabels,
+                datasets: [
+                    { label: 'Inventory Turnover', data: [6.46, 6.39, 3.61, 5.12, 2.98], backgroundColor: '#1e3d59' }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { boxWidth: 8, font: { size: 10 } } } } }
+        });
+
+        // 3. Profitability Chart Setup
+        new Chart(document.getElementById('chartProfitabilityMaster').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: globalLabels,
+                datasets: [
+                    { label: 'Gross Margin %', data: [21.4, 21.8, 19.0, 24.7, 21.3], borderColor: '#2563eb', borderWidth: 2, fill: false },
+                    { label: 'Net Margin %', data: [13.2, 12.4, 7.7, 16.0, 13.0], borderColor: '#4f46e5', borderWidth: 2, fill: false },
+                    { label: 'ROE %', data: [63.6, 76.8, 43.8, 101.6, 78.9], borderColor: '#10b981', borderWidth: 2, fill: false }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { boxWidth: 8, font: { size: 9 } } } } }
+        });
+
+        // 4. Solvency Chart Setup
+        new Chart(document.getElementById('chartSolvencyMaster').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: globalLabels,
+                datasets: [
+                    { label: 'Debt to Equity', data: [1.73, 1.84, 2.33, 2.11, 3.08], backgroundColor: '#475569' }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { boxWidth: 8, font: { size: 10 } } } } }
+        });
+
+        // 5. NEW: Projected Cash Flow Trajectory Chart
+        new Chart(document.getElementById('chartProjectedTrajectory').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['2026', '2027', '2028', '2029', '2030'],
+                datasets: [
+                    { label: 'Projected FCF', data: [9378264, 13899912, 16271496, 19047716, 9995276], borderColor: '#9333ea', backgroundColor: 'rgba(147, 51, 234, 0.05)', borderWidth: 2, fill: true, tension: 0.1 }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+
+        // 6. Valuation Range Bar Layout Chart
+        new Chart(document.getElementById('chartScenarioMaster').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Pessimistic', 'Base Case', 'Optimistic'],
+                datasets: [{
+                    data: [385.28, 513.75, 667.93],
+                    backgroundColor: ['#dc2626', '#1e3d59', '#16a34a'],
+                    barThickness: 32
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, ticks: { font: { size: 10 } } } }
+            }
+        });
+    </script>
+</body>
+</html>
